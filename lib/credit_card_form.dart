@@ -160,7 +160,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
     _cardNumberController.text = widget.cardNumber;
     cardNumber = _cardNumberController.text;
     creditCardModel.cardNumber = cardNumber;
-    onCreditCardModelChange(creditCardModel);
+    //onCreditCardModelChange(creditCardModel);
     super.didChangeDependencies();
   }
 
