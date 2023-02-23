@@ -157,7 +157,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
     print("w change oldu : ${widget.cardNumber}");
     print("model change oldu : ${creditCardModel.cardNumber}");
     print(" change oldu : ${cardNumber}");
-    cardNumberController.text = widget.cardNumber;
+    _cardNumberController.text = widget.cardNumber;
     cardNumber = _cardNumberController.text;
     creditCardModel.cardNumber = cardNumber;
     onCreditCardModelChange(creditCardModel);
