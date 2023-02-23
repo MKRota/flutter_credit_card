@@ -82,6 +82,7 @@ class CreditCardForm extends StatefulWidget {
   final String? Function(String?)? expiryDateValidator;
   final String? Function(String?)? cvvValidator;
   final String? Function(String?)? cardHolderValidator;
+  
 
 
   @override
@@ -154,14 +155,13 @@ class _CreditCardFormState extends State<CreditCardForm> {
   @override
   void didChangeDependencies() {
     themeColor = widget.themeColor;
-    print("w change oldu : ${widget.cardNumber}");
-    print("model change oldu : ${creditCardModel.cardNumber}");
-    print(" change oldu : ${cardNumber}");
-    _cardNumberController.text = widget.cardNumber;
-    cardNumber = _cardNumberController.text;
-    creditCardModel.cardNumber = cardNumber;
-    //onCreditCardModelChange(creditCardModel);
     super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(covariant CreditCardForm oldWidget) {
+    _cardNumberController.text = widget.cardNumber;
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
