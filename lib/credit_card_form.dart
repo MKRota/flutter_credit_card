@@ -154,8 +154,13 @@ class _CreditCardFormState extends State<CreditCardForm> {
   @override
   void didChangeDependencies() {
     themeColor = widget.themeColor;
-    print("change oldu");
+    print("w change oldu : ${widget.cardNumber}");
+    print("model change oldu : ${creditCardModel.cardNumber}");
+    print(" change oldu : ${cardNumber}");
     cardNumberController.text = widget.cardNumber;
+    cardNumber = _cardNumberController.text;
+    creditCardModel.cardNumber = cardNumber;
+    onCreditCardModelChange(creditCardModel);
     super.didChangeDependencies();
   }
 
