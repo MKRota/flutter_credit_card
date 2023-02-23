@@ -98,7 +98,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
   late void Function(CreditCardModel) onCreditCardModelChange;
   late CreditCardModel creditCardModel;
 
-  final MaskedTextController _cardNumberController =
+  final MaskedTextController cardNumberController =
       MaskedTextController(mask: '0000 0000 0000 0000');
   final TextEditingController _expiryDateController =
       MaskedTextController(mask: '00/00');
@@ -132,7 +132,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
 
     createCreditCardModel();
 
-    _cardNumberController.text = widget.cardNumber;
+    cardNumberController.text = widget.cardNumber;
     _expiryDateController.text = widget.expiryDate;
     _cardHolderNameController.text = widget.cardHolderName;
     _cvvCodeController.text = widget.cvvCode;
@@ -175,10 +175,10 @@ class _CreditCardFormState extends State<CreditCardForm> {
                 child: TextFormField(
                   key: widget.cardNumberKey,
                   obscureText: widget.obscureNumber,
-                  controller: _cardNumberController,
+                  controller: cardNumberController,
                   onChanged: (String value) {
                     setState(() {
-                      cardNumber = _cardNumberController.text;
+                      cardNumber = cardNumberController.text;
                       creditCardModel.cardNumber = cardNumber;
                       onCreditCardModelChange(creditCardModel);
                     });
